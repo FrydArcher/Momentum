@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-period="morning">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Momentum</title>
+  <meta name="description" content="Daily tracker: practice, study, food, workouts, pet care and points.">
+  <meta name="theme-color" content="#e9efe1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Momentum">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Pick the theme before first paint so it doesn't flash.
+    (function () { var h = new Date().getHours(); document.documentElement.dataset.period = h >= 5 && h < 11 ? 'morning' : h >= 11 && h < 17 ? 'day' : 'evening'; })();
+  </script>
+</head>
+<body>
+  <div class="top">
+    <span class="brand"><i aria-hidden="true"></i>Momentum</span>
+    <button class="pts-chip" data-a="tab" data-tab="points">🪙 <span id="pts">0</span></button>
+  </div>
+  <main id="main"></main>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="sheet" id="sheet" hidden><div class="sheet-body" id="sheet-body"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="lib.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
